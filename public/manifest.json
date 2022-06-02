@@ -1,0 +1,12 @@
+{
+  "short_name": "React App",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "icon_white.png",
+      "type": "image/png",
+      "sizes": "100x100"
+    }
+  ]
+
+}
