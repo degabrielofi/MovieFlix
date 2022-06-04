@@ -52,7 +52,7 @@ export const All = styled.div`
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  padding: 4rem 0;
+  padding: 2.5rem 0;
   width: 85%;
 
     
@@ -385,7 +385,6 @@ export const Informations = styled.div`
 .infos p {
 
   padding: 0.5rem;
-  color: ${props => props.theme.primary};
 
 }
 
