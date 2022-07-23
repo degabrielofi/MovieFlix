@@ -124,7 +124,7 @@ function Details() {
                             <ReleaseDate date={movie.releaseDate} />
 
                             <div className="buttons">
-                                <a href={movie.homepage} target="_blank" > <button >Assistir</button ></a>
+                                <a style={movie.homepage ? {display: "block"} : {display: "none"}} href={movie.homepage} target="__blank"><button >Assistir</button></a>
                                 <Link to="/"><button className="button_back">Voltar</button></Link>
                             </div>
                         </div>

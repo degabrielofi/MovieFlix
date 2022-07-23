@@ -140,10 +140,10 @@ function Home() {
 							<div className="footer-col">
 								<h4>Redes Sociais:</h4>
 								<div className="social-links">
-									<a href="https://github.com/degabrielofi"><i className="fab fa-github"></i></a>
-									<a href="https://discord.gg/TNMzEFyxA4"><i className="fab fa-discord"></i></a>
-									<a href="https://www.instagram.com/degabrielofi_/"><i className="fab fa-instagram"></i></a>
-									<a href="https://www.linkedin.com/in/degabrielofi/"><i className="fab fa-linkedin-in"></i></a>
+									<a target="__blank" href="https://github.com/degabrielofi"><i className="fab fa-github"></i></a>
+									<a target="__blank" href="https://discord.gg/TNMzEFyxA4"><i className="fab fa-discord"></i></a>
+									<a target="__blank" href="https://www.instagram.com/degabrielofi_/"><i className="fab fa-instagram"></i></a>
+									<a target="__blank" href="https://www.linkedin.com/in/degabrielofi/"><i className="fab fa-linkedin-in"></i></a>
 								</div>
 							</div>
 						</div>

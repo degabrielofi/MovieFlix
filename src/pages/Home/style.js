@@ -154,7 +154,7 @@ export const MovieList = styled.ul`
 
 list-style: none;
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 column-gap: 2rem;
 row-gap: 2rem;
 
