@@ -93,43 +93,7 @@ img {
    
 }
 
-.buttons {
-    
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 1rem 0;
-  
-}
 
-.buttons button {  
-        
-  background: #d52322;
-  border: none;
-  cursor: pointer;
-  border-radius: 1rem;
-  color: #fff;
-  padding: 1rem 4rem;
-  margin-top: 0.5rem;
-  margin-right: 1rem;
-  font-size: 100%;
-  transition: all 0.3s;
-  
-}
-      
-button:hover {
-    
-  filter: brightness(0.8);
-  
-}
-  
-button:active {
-    
-  filter: brightness(0.5);
-  
-}
     
 span {
 
@@ -397,5 +361,52 @@ export const Informations = styled.div`
 }
   
 }
+
+`
+
+
+
+export const WebLinks = styled.div`
+
+
+display: flex;
+justify-content: center;
+flex-direction: column;
+flex-wrap: wrap;
+position: relative;
+
+
+.buttons {
+    
+    margin: 1rem 0;
+    
+  }
+  
+  .buttons button {  
+          
+    background: #d52322;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    color: #fff;
+    padding: 1.2rem 4.2rem;
+    margin-top: 0.5rem;
+    margin-right: 0;
+    font-size: 100%;
+    transition: all 0.3s;
+    
+  }
+        
+  button:hover {
+      
+    filter: brightness(0.8);
+    
+  }
+    
+  button:active {
+      
+    filter: brightness(0.5);
+    
+  }
 
 `

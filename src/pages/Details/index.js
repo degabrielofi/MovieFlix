@@ -3,11 +3,11 @@ import { Link, useParams } from "react-router-dom"
 import { ApiBackground } from "../../config/back"
 import { ApiImage } from "../../config/image"
 import { ApiKey } from "../../config/key"
-import { Container, Menu, All, Actors, Informations, Infos, Actor_title } from "./style"
+import { Container, Menu, All, Actors, Informations, Infos, Actor_title, WebLinks } from "./style"
 import Logo from "../../assets/icons/tmbd-logo.svg"
 import Icon from "../../assets/icons/logo_white.png"
 import MovieInfo from "../../components/MovieInfo"
-import NoImage from "../../assets/no_image.jpg"
+import NoImage from "../../assets/no_image.png"
 import ReleaseDate from "../../components/ReleaseData"
 
 function Details() {
@@ -121,12 +121,14 @@ function Details() {
                                 </div>
                             </Infos>
 
-                            <ReleaseDate date={movie.releaseDate} />
+                            <WebLinks>
+                                <ReleaseDate date={movie.releaseDate} />
 
-                            <div className="buttons">
-                                <a style={movie.homepage ? {display: "block"} : {display: "none"}} href={movie.homepage} target="__blank"><button >Assistir</button></a>
-                                <Link to="/"><button className="button_back">Voltar</button></Link>
-                            </div>
+                                <div className="buttons">
+                                    <a style={movie.homepage ? { display: "flex" } : { display: "none" }} href={movie.homepage} target="__blank"><button >Assistir</button></a>
+                                    <Link to="/"><button className="button_back">Voltar</button></Link>
+                                </div>
+                            </WebLinks>
                         </div>
                     </div>
                 </All>
