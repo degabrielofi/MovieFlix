@@ -12,15 +12,16 @@ padding-top: 1rem;
         
       }
           
-@media (max-width: 991px) {
+@media (max-width: 968px) {
+
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
 
     .release-date {
     
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem 0.5rem;
+      margin: 1rem 0.5rem;
     
   }
 

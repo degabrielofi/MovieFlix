@@ -56,22 +56,22 @@ function Details() {
                     status,
                     credit_id,
                     name,
-                    average: `${vote_average}`
+                    average: `${vote_average.toFixed(1)}`
 
                 }
-
+                
                 setMovie(movie)
-
+                
             })
-
-        const ApiCredits = (`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${ApiKey}&language=pt-BR`)
-
-        fetchCredits(ApiCredits)
-        SearchCredits(ApiCredits)
-
-    }, [])
-
-    return (
+            
+            const ApiCredits = (`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${ApiKey}&language=pt-BR`)
+            
+            fetchCredits(ApiCredits)
+            SearchCredits(ApiCredits)
+            
+        }, [])
+    
+        return (
 
         <Container>
 
@@ -120,8 +120,8 @@ function Details() {
                                         })}
                                     </div>
                                 </div>
-                                <ReleaseDate date={movie.releaseDate} />
                             </Infos>
+                                <ReleaseDate date={movie.releaseDate} />
 
                             <WebLinks>
                                 <div className="buttons">
