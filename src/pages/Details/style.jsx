@@ -224,7 +224,7 @@ export const Actors = styled.div`
   }
 `;
 
-export const Informations = styled.div`
+export const Information = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
