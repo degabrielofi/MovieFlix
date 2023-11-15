@@ -11,7 +11,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ApiImage } from "config/image";
 import Logo from "assets/icons/tmbd-logo.svg";
-import Icon from "assets/icons/logo_white.png";
+import Icon from "assets/icons/logo.png";
 
 function Home() {
     const [movies, setMovies] = useState([]);

@@ -14,9 +14,9 @@ import {
     WebLinks,
 } from "./style";
 import Logo from "assets/icons/tmbd-logo.svg";
-import Icon from "assets/icons/logo_white.png";
+import Icon from "assets/icons/logo.png";
 import MovieInfo from "components/MovieInfo";
-import NoImage from "assets/no_image.png";
+import NoImage from "assets/images/no_image.png";
 import ReleaseDate from "components/ReleaseData";
 
 function Details() {
