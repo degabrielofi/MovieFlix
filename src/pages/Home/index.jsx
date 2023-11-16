@@ -1,4 +1,4 @@
-import { MovieList, Movie, Pagination, Search } from "./style";
+import { MovieList, Movie, MoreMovies, Search } from "./style";
 import { ApiKey } from "../../config/key";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -60,6 +60,7 @@ function Home() {
         fetchMovies(endpoint);
     };
 
+    console.log(CurrentPage);
     return (
         <>
             <Header />
@@ -136,9 +137,9 @@ function Home() {
                 })}
             </MovieList>
 
-            <Pagination id="paginas" className="pageback">
+            <MoreMovies>
                 <button onClick={handleClick}>Carregar Mais...</button>
-            </Pagination>
+            </MoreMovies>
 
             <Footer />
         </>

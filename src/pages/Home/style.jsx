@@ -125,7 +125,7 @@ export const Movie = styled.li`
     }
 `;
 
-export const Pagination = styled.div`
+export const MoreMovies = styled.div`
     padding: 4rem 1.5rem;
     display: flex;
     align-items: center;
