@@ -1,17 +1,10 @@
-import {
-    MovieList,
-    Movie,
-    Pagination,
-    Menu,
-    FooterPage,
-    Search,
-} from "./style";
+import { MovieList, Movie, Pagination, Search } from "./style";
 import { ApiKey } from "../../config/key";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ApiImage } from "config/image";
-import Logo from "assets/icons/tmbd-logo.svg";
-import Icon from "assets/icons/logo.png";
+import Header from "components/Header";
+import Footer from "components/Footer";
 
 function Home() {
     const [movies, setMovies] = useState([]);
@@ -69,12 +62,7 @@ function Home() {
 
     return (
         <>
-            <Menu>
-                <header>
-                    <img src={Icon} alt="Icon" className="icon" />
-                    <img src={Logo} alt="Logo" />
-                </header>
-            </Menu>
+            <Header />
 
             <Search id="pesquisar">
                 <div className="curved-div upper">
@@ -152,96 +140,7 @@ function Home() {
                 <button onClick={handleClick}>Carregar Mais...</button>
             </Pagination>
 
-            <FooterPage>
-                <footer className="footer" id="footer">
-                    <div className="container">
-                        <div className="row">
-                            <div className="footer-col">
-                                <h4>Navegue por aqui</h4>
-                                <ul>
-                                    <li>
-                                        <a href="/">Home</a>
-                                    </li>
-                                    <li>
-                                        <a href="#pesquisar">Pesquisar</a>
-                                    </li>
-                                    <li>
-                                        <a href="#movies">Filmes</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">Perguntas Frequentes</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="footer-col">
-                                <h4>Obter Ajuda</h4>
-                                <ul>
-                                    <li>
-                                        <a href="/">FAQ</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">Telefone</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">Chat</a>
-                                    </li>
-                                    <li>
-                                        <a href="mailto:contatodegabrielofi@gmail.com">
-                                            Suporte
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="footer-col">
-                                <h4>Companhia</h4>
-                                <ul>
-                                    <li>
-                                        <a href="/">Empresa</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">Quem Somos</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">Noticias</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">Serviços</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="footer-col">
-                                <h4>Redes Sociais:</h4>
-                                <div className="social-links">
-                                    <a
-                                        target="__blank"
-                                        href="https://github.com/degabrielofi"
-                                    >
-                                        <i className="fab fa-github"></i>
-                                    </a>
-                                    <a
-                                        target="__blank"
-                                        href="https://discord.gg/TNMzEFyxA4"
-                                    >
-                                        <i className="fab fa-discord"></i>
-                                    </a>
-                                    <a
-                                        target="__blank"
-                                        href="https://www.instagram.com/degabrielofi_/"
-                                    >
-                                        <i className="fab fa-instagram"></i>
-                                    </a>
-                                    <a
-                                        target="__blank"
-                                        href="https://www.linkedin.com/in/degabrielofi/"
-                                    >
-                                        <i className="fab fa-linkedin-in"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </FooterPage>
+            <Footer />
         </>
     );
 }

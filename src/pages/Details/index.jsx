@@ -5,19 +5,18 @@ import { ApiImage } from "config/image";
 import { ApiKey } from "config/key";
 import {
     Container,
-    Menu,
-    All,
+    Background,
+    Content,
     Actors,
     Information,
     Infos,
-    Actor_title,
+    TitleActors,
     WebLinks,
 } from "./style";
-import Logo from "assets/icons/tmbd-logo.svg";
-import Icon from "assets/icons/logo.png";
 import MovieInfo from "components/MovieInfo";
 import NoImage from "assets/images/no_image.png";
 import ReleaseDate from "components/ReleaseData";
+import Header from "components/Header";
 
 function Details() {
     const { id } = useParams();
@@ -91,29 +90,19 @@ function Details() {
 
     return (
         <Container>
-            <div
-                className="background_movie"
-                style={{ backgroundImage: `url(${movie.background})` }}
-            >
-                {
-                    <Menu>
-                        <header>
-                            <img src={Icon} alt="Icon" className="icon" />
-                            <img src={Logo} alt="Logo" />
-                        </header>
-                    </Menu>
-                }
+            <Background style={{ backgroundImage: `url(${movie.background})` }}>
+                <Header />
 
-                <All>
+                <Content>
                     <div className="movie">
                         <img src={movie.image} alt={movie.sinopse} />
                         <div className="details">
-                            <h1>{movie.title}:</h1>
+                            <h1 className="title">{movie.title}:</h1>
                             <span>
                                 Sinopse:{" "}
                                 {movie.sinopse
                                     ? movie.sinopse
-                                    : "Nenhum dado encontrado."}
+                                    : "Nenhum dado foi encontrado."}
                             </span>
 
                             <Infos>
@@ -127,7 +116,7 @@ function Details() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="info_title_1">
+                                    <div className="info_title">
                                         <i
                                             className={
                                                 movie.status === "Released"
@@ -150,7 +139,7 @@ function Details() {
                                             </span>
                                         </div>
                                     </div>
-                                    <div className="info_title_2">
+                                    <div className="info_title">
                                         <i className="fas fa-film"></i>
                                         <span>Diretores(as):</span>
                                         {jobs.map((director) => {
@@ -160,11 +149,17 @@ function Details() {
                                                     className="directors"
                                                 >
                                                     <span
-                                                        className={
+                                                        style={
                                                             director.job ===
                                                             "Director"
-                                                                ? "exists"
-                                                                : "not_exists"
+                                                                ? {
+                                                                      display:
+                                                                          "flex",
+                                                                  }
+                                                                : {
+                                                                      display:
+                                                                          "none",
+                                                                  }
                                                         }
                                                     >
                                                         {director.job ===
@@ -209,8 +204,8 @@ function Details() {
                             </WebLinks>
                         </div>
                     </div>
-                </All>
-            </div>
+                </Content>
+            </Background>
 
             <MovieInfo
                 time={movie.runtime}
@@ -218,18 +213,14 @@ function Details() {
                 revenue={movie.revenue}
             />
 
-            <Actor_title>
+            <TitleActors>
                 <h1>Atores:</h1>
-            </Actor_title>
+            </TitleActors>
 
-            <Actors className="filmesback">
+            <Actors>
                 {credits.map((credits) => {
                     return (
-                        <section
-                            key={credits.id}
-                            className="movies"
-                            id="movies"
-                        >
+                        <section key={credits.id} className="movies">
                             <Information>
                                 <div className="infos">
                                     <img
