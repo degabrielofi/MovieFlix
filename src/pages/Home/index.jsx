@@ -1,5 +1,5 @@
 import { MovieList, Movie, MoreMovies, Search } from "./style";
-import { ApiKey } from "../../config/key";
+import { ApiKey } from "config/key";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ApiImage } from "config/image";
