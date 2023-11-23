@@ -9,7 +9,6 @@ import { Actors, Information } from "./style";
 const Credits = () => {
     const { id } = useParams();
     const [credits, setCredits] = useState([]);
-    const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
         const fetchCredits = (path) => {
@@ -20,18 +19,9 @@ const Credits = () => {
                 });
         };
 
-        const SearchCredits = (path) => {
-            fetch(path)
-                .then((response) => response.json())
-                .then((response) => {
-                    setJobs([...credits, ...response.crew]);
-                });
-        };
-
         const ApiCredits = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${ApiKey}&language=pt-BR`;
 
         fetchCredits(ApiCredits);
-        SearchCredits(ApiCredits);
     }, []);
 
     return (

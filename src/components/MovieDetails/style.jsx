@@ -42,6 +42,10 @@ export const Content = styled.div`
         font-size: 130%;
     }
 
+    .infoTitle {
+        padding: 0 0;
+    }
+
     @media (max-width: 991px) {
         text-align: center;
 

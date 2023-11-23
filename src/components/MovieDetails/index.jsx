@@ -31,11 +31,7 @@ const MovieDetails = () => {
                     poster_path,
                     overview,
                     release_date,
-                    backdrop_path,
                     homepage,
-                    runtime,
-                    budget,
-                    revenue,
                     status,
                     credit_id,
                     name,
@@ -46,13 +42,9 @@ const MovieDetails = () => {
                     id,
                     title,
                     sinopse: overview,
-                    background: `${ApiBackground}${backdrop_path}`,
                     image: `${ApiImage}${poster_path}`,
                     releaseDate: release_date,
                     homepage: `${homepage}`,
-                    runtime,
-                    budget,
-                    revenue,
                     status,
                     credit_id,
                     name,
@@ -85,39 +77,21 @@ const MovieDetails = () => {
                             <div className="infos">
                                 <div className="info_title">
                                     <i className="fas fa-star"></i>
-                                    <span>Avaliação:</span>
+                                    <span className="infoTitle">
+                                        Avaliação:
+                                    </span>
                                     <div className="rating">
                                         <div className="circle">
                                             <h1>{movie.average}</h1>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="info_title">
-                                    <i
-                                        className={
-                                            movie.status === "Released"
-                                                ? "fas fa-check"
-                                                : "far fa-clock"
-                                        }
-                                    ></i>{" "}
-                                    <span>Status:</span>
-                                    <div className="status">
-                                        <span>
-                                            {movie.status === "Released" ? (
-                                                <span className="text">
-                                                    Já lançado.
-                                                </span>
-                                            ) : (
-                                                <span className="text">
-                                                    Em produção.
-                                                </span>
-                                            )}{" "}
-                                        </span>
-                                    </div>
-                                </div>
+                                <div className="info_title"></div>
                                 <div className="info_title">
                                     <i className="fas fa-film"></i>
-                                    <span>Diretores(as):</span>
+                                    <span className="infoTitle">
+                                        Diretores(as):
+                                    </span>
                                     {jobs.map((director) => {
                                         return (
                                             <div
@@ -148,6 +122,7 @@ const MovieDetails = () => {
                                 </div>
                             </div>
                         </Infos>
+
                         <ReleaseDate date={movie.releaseDate} />
 
                         <WebLinks>
