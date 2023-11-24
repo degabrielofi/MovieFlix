@@ -3,21 +3,19 @@ import { Content, Infos, WebLinks } from "./style";
 import ReleaseDate from "components/ReleaseData";
 import { Link, useParams } from "react-router-dom";
 import { ApiKey } from "config/key";
-import { ApiBackground } from "config/back";
 import { ApiImage } from "config/image";
 
 const MovieDetails = () => {
     const { id } = useParams();
     const [movie, setMovie] = useState({});
     const [jobs, setJobs] = useState([]);
-    const [credits, setCredits] = useState([]);
 
     useEffect(() => {
         const SearchCredits = (path) => {
             fetch(path)
                 .then((response) => response.json())
                 .then((response) => {
-                    setJobs([...credits, ...response.crew]);
+                    setJobs([...response.crew]);
                 });
         };
 
@@ -57,7 +55,7 @@ const MovieDetails = () => {
         const ApiCredits = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${ApiKey}&language=pt-BR`;
 
         SearchCredits(ApiCredits);
-    }, []);
+    });
 
     return (
         <>
@@ -102,6 +100,7 @@ const MovieDetails = () => {
                                                 className="directors"
                                             >
                                                 <span
+                                                    className="nameOfDirectors"
                                                     style={
                                                         director.job ===
                                                         "Director"

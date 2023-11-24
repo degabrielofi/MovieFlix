@@ -113,6 +113,10 @@ export const Infos = styled.div`
         margin: 0;
     }
 
+    .nameOfDirectors {
+        margin: 0;
+    }
+
     .directors span {
         font-size: 1.2rem;
     }
