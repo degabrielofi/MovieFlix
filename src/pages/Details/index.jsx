@@ -36,13 +36,12 @@ function Details() {
             <Background style={{ backgroundImage: `url(${movie.background})` }}>
                 <Header />
                 <MovieDetails />
+                <MovieInfo
+                    time={movie.runtime}
+                    budget={movie.budget}
+                    revenue={movie.revenue}
+                />
             </Background>
-
-            <MovieInfo
-                time={movie.runtime}
-                budget={movie.budget}
-                revenue={movie.revenue}
-            />
 
             <TitleActors>
                 <h1>Atores:</h1>

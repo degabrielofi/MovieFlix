@@ -1,15 +1,12 @@
 import styled from "styled-components";
 
 export const Content = styled.div`
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 85%;
-    padding: 1% 0;
-
     .movie {
         display: flex;
+        margin: 1rem auto 1rem auto;
         justify-content: center;
         align-items: center;
+        max-width: 85%;
         background: rgba(000, 000, 000, 0.6);
         box-shadow: 0 15px 15px rgba(0, 0, 0, 0.8);
         border-radius: 1rem;
@@ -112,14 +109,6 @@ export const Infos = styled.div`
         font-size: 1.5rem;
     }
 
-    .status h1 {
-        font-size: 1.5rem;
-    }
-
-    .status span {
-        font-size: 1.2rem;
-    }
-
     .directors {
         margin: 0;
     }
@@ -152,6 +141,11 @@ export const Infos = styled.div`
             align-items: center;
             justify-content: center;
             margin: auto;
+        }
+
+        .directors {
+            display: flex;
+            justify-content: center;
         }
     }
 `;
