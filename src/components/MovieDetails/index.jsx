@@ -55,7 +55,7 @@ const MovieDetails = () => {
         const ApiCredits = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${ApiKey}&language=pt-BR`;
 
         SearchCredits(ApiCredits);
-    });
+    }, []);
 
     return (
         <>

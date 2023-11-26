@@ -7,10 +7,12 @@ import Credits from "components/Credits";
 import { ApiKey } from "config/key";
 import { useParams } from "react-router-dom";
 import { ApiBackground } from "config/back";
+import PreLoad from "components/PreLoad";
 
 function Details() {
     const { id } = useParams();
     const [movie, setMovie] = useState({});
+    const [removeLoading, setRemoveLoading] = useState(false);
 
     useEffect(() => {
         fetch(
@@ -19,6 +21,7 @@ function Details() {
             .then((response) => response.json())
             .then((data) => {
                 const { runtime, budget, revenue, backdrop_path } = data;
+                setRemoveLoading(true);
 
                 const movie = {
                     runtime,
@@ -29,12 +32,13 @@ function Details() {
 
                 setMovie(movie);
             });
-    });
+        console.log(removeLoading);
+    }, []);
 
     return (
         <>
             <Background style={{ backgroundImage: `url(${movie.background})` }}>
-                <Header />
+                <Header style={{ display: "none" }} />
                 <MovieDetails />
                 <MovieInfo
                     time={movie.runtime}
@@ -47,7 +51,7 @@ function Details() {
                 <h1>Atores:</h1>
             </TitleActors>
 
-            <Credits />
+            <Credits style={{ backgroundColor: "#fff" }} />
         </>
     );
 }

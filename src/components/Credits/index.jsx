@@ -41,7 +41,9 @@ const Credits = () => {
                                         alt={credits.title}
                                     />
                                     <p>{credits.character}</p>
-                                    <p>Interpretado por: {credits.name}</p>
+                                    <p>
+                                        Interpretado por: <br /> {credits.name}
+                                    </p>
                                 </div>
                             </Information>
                         </section>
