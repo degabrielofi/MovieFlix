@@ -164,7 +164,7 @@ export const WebLinks = styled.div`
     }
 
     .buttons button {
-        background: #d52322;
+        background: #8e0e00;
         border: none;
         cursor: pointer;
         border-radius: 1rem;
@@ -174,6 +174,7 @@ export const WebLinks = styled.div`
         margin-right: 0;
         font-size: 100%;
         transition: all 0.3s;
+        font-weight: 400;
     }
 
     .buttons a {

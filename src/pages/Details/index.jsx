@@ -12,7 +12,7 @@ import PreLoad from "components/PreLoad";
 function Details() {
     const { id } = useParams();
     const [movie, setMovie] = useState({});
-    const [removeLoading, setRemoveLoading] = useState(false);
+    const [removeLoading, setRemoveLoading] = useState(true);
 
     useEffect(() => {
         fetch(
@@ -21,7 +21,9 @@ function Details() {
             .then((response) => response.json())
             .then((data) => {
                 const { runtime, budget, revenue, backdrop_path } = data;
-                setRemoveLoading(true);
+                setTimeout(() => {
+                    setRemoveLoading(false);
+                }, 4000);
 
                 const movie = {
                     runtime,
@@ -32,26 +34,31 @@ function Details() {
 
                 setMovie(movie);
             });
-        console.log(removeLoading);
     }, []);
 
     return (
         <>
-            <Background style={{ backgroundImage: `url(${movie.background})` }}>
-                <Header style={{ display: "none" }} />
-                <MovieDetails />
-                <MovieInfo
-                    time={movie.runtime}
-                    budget={movie.budget}
-                    revenue={movie.revenue}
-                />
-            </Background>
-
-            <TitleActors>
-                <h1>Atores:</h1>
-            </TitleActors>
-
-            <Credits style={{ backgroundColor: "#fff" }} />
+            {removeLoading ? (
+                <PreLoad />
+            ) : (
+                <div>
+                    <Background
+                        style={{ backgroundImage: `url(${movie.background})` }}
+                    >
+                        <Header />
+                        <MovieDetails />
+                        <MovieInfo
+                            time={movie.runtime}
+                            budget={movie.budget}
+                            revenue={movie.revenue}
+                        />
+                    </Background>
+                    <TitleActors>
+                        <h1>Atores:</h1>
+                    </TitleActors>
+                    <Credits />
+                </div>
+            )}
         </>
     );
 }

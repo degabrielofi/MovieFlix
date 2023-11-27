@@ -132,7 +132,7 @@ export const MoreMovies = styled.div`
     justify-content: center;
 
     button {
-        background: #d52322;
+        background: #8e0e00;
         border: none;
         cursor: pointer;
         border-radius: 1rem;

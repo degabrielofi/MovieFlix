@@ -41,7 +41,7 @@ export const Content = styled.div`
         position: absolute;
         left: 0;
         bottom: -10px;
-        background-color: #d52322;
+        background-color: #8e0e00;
         height: 2px;
         box-sizing: border-box;
         width: 50px;

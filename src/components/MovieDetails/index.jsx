@@ -64,14 +64,11 @@ const MovieDetails = () => {
                     <img src={movie.image} alt={movie.sinopse} />
                     <div className="details">
                         <h1 className="title">{movie.title}:</h1>
-                        <span
-                            style={
-                                movie.sinopse
-                                    ? { display: "flex" }
-                                    : { display: "none" }
-                            }
-                        >
-                            Sinopse: {movie.sinopse}
+                        <span>
+                            Sinopse:{" "}
+                            {movie.sinopse
+                                ? movie.sinopse
+                                : "Este filme não contém nenhum dado sobre sua sinopse para ser coletado e mostrado aqui."}
                         </span>
 
                         <Infos>
