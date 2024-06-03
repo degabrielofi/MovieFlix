@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ApiImage } from "config/image";
 import Header from "components/Header";
 import Footer from "components/Footer";
+import NoResults from "components/NoResults";
 
 function Home() {
     const [movies, setMovies] = useState([]);
@@ -59,7 +60,6 @@ function Home() {
         fetchMovies(endpoint);
     };
 
-    console.log(CurrentPage);
     return (
         <>
             <Header />
@@ -119,24 +119,40 @@ function Home() {
             </Search>
 
             <MovieList className="filmesback">
-                {movies.map((movie) => {
-                    return (
-                        <section key={movie.id} className="movies" id="movies">
-                            <Movie>
-                                <Link to={`/details/${movie.id}`}>
-                                    {" "}
-                                    <img
-                                        src={`${ApiImage}${movie.poster_path}`}
-                                        alt={movie.title}
-                                    />
-                                </Link>
-                            </Movie>
-                        </section>
-                    );
-                })}
+                {movies.length === 0 ? (
+                    <NoResults />
+                ) : (
+                    <>
+                        {movies.map((movie) => {
+                            return (
+                                <section
+                                    key={movie.id}
+                                    className="movies"
+                                    id="movies"
+                                >
+                                    <Movie>
+                                        <Link to={`/details/${movie.id}`}>
+                                            {" "}
+                                            <img
+                                                src={`${ApiImage}${movie.poster_path}`}
+                                                alt={movie.title}
+                                            />
+                                        </Link>
+                                    </Movie>
+                                </section>
+                            );
+                        })}
+                    </>
+                )}
             </MovieList>
 
-            <MoreMovies>
+            <MoreMovies
+                style={
+                    movies.length === 0
+                        ? { display: "none" }
+                        : { display: "flex" }
+                }
+            >
                 <button onClick={handleClick}>Carregar Mais...</button>
             </MoreMovies>
 
