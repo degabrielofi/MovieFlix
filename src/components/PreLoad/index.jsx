@@ -6,7 +6,7 @@ const PreLoad = () => {
         <Loading>
             <>
                 <section className="screen">
-                    <span class="loader"></span>
+                    <span className="loader"></span>
                 </section>
             </>
         </Loading>
