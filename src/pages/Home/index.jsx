@@ -60,6 +60,8 @@ function Home() {
         fetchMovies(endpoint);
     };
 
+    console.log(handleOnChange);
+
     return (
         <>
             <Header />
@@ -81,7 +83,7 @@ function Home() {
                     <h1>ENCONTRE O SEU FILME</h1>
                     <p>
                         Com a MovieFLix você irá achar um filme que combine com
-                        você, é saberá onde o assistir.
+                        você, e saberá onde o assistir.
                     </p>
                     <form
                         onSubmit={handleOnSubmit}
@@ -148,9 +150,10 @@ function Home() {
 
             <MoreMovies
                 style={
-                    movies.length === 0
+                    (movies.length === 0
                         ? { display: "none" }
-                        : { display: "flex" }
+                        : { display: "flex" },
+                    searchTerm >= 1 ? { display: "none" } : { display: "flex" })
                 }
             >
                 <button onClick={handleClick}>Carregar Mais...</button>

@@ -66,24 +66,28 @@ const Footer = () => {
                                 <a
                                     target="__blank"
                                     href="https://github.com/degabrielofi"
+                                    aria-label="GitHub"
                                 >
                                     <i className="fab fa-github"></i>
                                 </a>
                                 <a
                                     target="__blank"
                                     href="https://discord.gg/TNMzEFyxA4"
+                                    aria-label="Discord"
                                 >
                                     <i className="fab fa-discord"></i>
                                 </a>
                                 <a
                                     target="__blank"
                                     href="https://www.instagram.com/degabrielofi_/"
+                                    aria-label="Instagram"
                                 >
                                     <i className="fab fa-instagram"></i>
                                 </a>
                                 <a
                                     target="__blank"
                                     href="https://www.linkedin.com/in/degabrielofi/"
+                                    aria-label="LinkedIn"
                                 >
                                     <i className="fab fa-linkedin-in"></i>
                                 </a>
