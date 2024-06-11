@@ -12,14 +12,20 @@ export const Menu = styled.div`
         justify-content: space-between;
     }
 
+    a {
+        text-decoration: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
     header img {
-        width: 10%;
+        width: 12%;
         padding: 0 1rem;
     }
 
     @media screen and (max-width: 968px) {
         header img {
-            width: 25%;
+            width: 30%;
         }
     }
 `;

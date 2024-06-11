@@ -21,9 +21,6 @@ function Details() {
             .then((response) => response.json())
             .then((data) => {
                 const { runtime, budget, revenue, backdrop_path } = data;
-                setTimeout(() => {
-                    setRemoveLoading(false);
-                }, 4000);
 
                 const movie = {
                     runtime,
@@ -33,6 +30,9 @@ function Details() {
                 };
 
                 setMovie(movie);
+                setTimeout(() => {
+                    setRemoveLoading(false);
+                }, 3000);
             });
     }, []);
 
