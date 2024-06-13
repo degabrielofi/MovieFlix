@@ -150,10 +150,9 @@ function Home() {
 
             <MoreMovies
                 style={
-                    (movies.length === 0
+                    movies.length === 0
                         ? { display: "none" }
-                        : { display: "flex" },
-                    searchTerm >= 1 ? { display: "none" } : { display: "flex" })
+                        : { display: "flex" }
                 }
             >
                 <button onClick={handleClick}>Carregar Mais...</button>
