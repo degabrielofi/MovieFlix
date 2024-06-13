@@ -11,6 +11,7 @@ function Home() {
     const [movies, setMovies] = useState([]);
     const [CurrentPage, setCurrentPage] = useState(0);
     const [searchTerm, setSearchTerm] = useState("");
+    const [hiddenButton, setHiddenButton] = useState(false);
 
     const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&query=`;
     const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${ApiKey}`;
@@ -33,6 +34,8 @@ function Home() {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
+        setHiddenButton(true);
+
         if (searchTerm) {
             getMovies(SEARCH_API + searchTerm);
             setSearchTerm("");
@@ -60,7 +63,7 @@ function Home() {
         fetchMovies(endpoint);
     };
 
-    console.log(handleOnChange);
+    console.log(hiddenButton);
 
     return (
         <>
@@ -150,9 +153,10 @@ function Home() {
 
             <MoreMovies
                 style={
-                    movies.length === 0
+                    (movies.length === 0
                         ? { display: "none" }
-                        : { display: "flex" }
+                        : { display: "flex" },
+                    hiddenButton ? { display: "none" } : { display: "flex" })
                 }
             >
                 <button onClick={handleClick}>Carregar Mais...</button>
