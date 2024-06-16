@@ -86,6 +86,44 @@ export const Content = styled.div`
         background-color: #fff;
     }
 
+    .degabrieldev {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5% 5%;
+    }
+
+    .copy h4 {
+        color: #fff;
+        font-weight: 500;
+    }
+
+    .degabrieldevLink {
+        width: 20%;
+    }
+
+    .degabrieldevLink img {
+        width: 100%;
+    }
+
+    @media (max-width: 992px) {
+        .copy h4 {
+            font-size: 50%;
+        }
+
+        .degabrieldevLink {
+            width: 40%;
+        }
+    }
+
+    @media (max-width: 250px) {
+        .degabrieldev {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
     @media (max-width: 767px) {
         .footer-col h4::before {
             margin: 2px 35%;
