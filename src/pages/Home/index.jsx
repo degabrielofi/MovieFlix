@@ -63,8 +63,6 @@ function Home() {
         fetchMovies(endpoint);
     };
 
-    console.log(hiddenButton);
-
     return (
         <>
             <Header />
