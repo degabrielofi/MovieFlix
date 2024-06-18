@@ -9,7 +9,9 @@ import NoResults from "components/NoResults";
 
 function Home() {
     const [movies, setMovies] = useState([]);
-    const [CurrentPage, setCurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(
+        parseInt(sessionStorage.getItem("CurrentPage")) || 1
+    );
     const [searchTerm, setSearchTerm] = useState("");
     const [hiddenButton, setHiddenButton] = useState(false);
 
@@ -17,18 +19,39 @@ function Home() {
     const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${ApiKey}`;
 
     useEffect(() => {
-        getMovies(FEATURED_API);
-
-        const endpoint = `https://api.themoviedb.org/3/movie/popular?api_key=${ApiKey}&language=pt-BR&page=1`;
-
-        fetchMovies(endpoint);
+        const storedCurrentPage = sessionStorage.getItem("CurrentPage");
+        if (storedCurrentPage) {
+            if (currentPage > 1) {
+                loadSavedPages();
+            } else {
+                getMovies(FEATURED_API);
+            }
+        } else {
+            getMovies(FEATURED_API);
+        }
     }, []);
+
+    const loadSavedPages = () => {
+        const totalPages = parseInt(sessionStorage.getItem("totalPages")) || 0;
+        const pageData = [];
+        for (let i = 1; i <= totalPages; i++) {
+            const storedPageData = JSON.parse(
+                sessionStorage.getItem(`page-${i}`)
+            );
+            if (storedPageData) {
+                pageData.push(...storedPageData.movies);
+            }
+        }
+        setMovies(pageData);
+    };
 
     const getMovies = (API) => {
         fetch(API)
             .then((res) => res.json())
             .then((data) => {
                 setMovies(data.results);
+                savePageData(1, data.results);
+                sessionStorage.setItem("totalPages", 1);
             });
     };
 
@@ -52,14 +75,22 @@ function Home() {
             .then((response) => {
                 setMovies([...movies, ...response.results]);
                 setCurrentPage(response.page);
+                savePageData(response.page, response.results);
+                sessionStorage.setItem("totalPages", response.page);
             });
+    };
+
+    const savePageData = (page, movies) => {
+        const pageData = { page, movies };
+        sessionStorage.setItem(`page-${page}`, JSON.stringify(pageData));
     };
 
     const handleClick = () => {
         let endpoint = `https://api.themoviedb.org/3/movie/popular?api_key=${ApiKey}&language=pt-BR&page=${
-            CurrentPage + 1
+            currentPage + 1
         }`;
 
+        sessionStorage.setItem("CurrentPage", currentPage + 1);
         fetchMovies(endpoint);
     };
 
