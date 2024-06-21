@@ -8,6 +8,7 @@ import { ApiKey } from "config/key";
 import { useParams } from "react-router-dom";
 import { ApiBackground } from "config/back";
 import PreLoad from "components/PreLoad";
+import Footer from "components/Footer";
 
 function Details() {
     const { id } = useParams();
@@ -57,6 +58,7 @@ function Details() {
                         <h1>Atores:</h1>
                     </TitleActors>
                     <Credits />
+                    <Footer />
                 </div>
             )}
         </>
