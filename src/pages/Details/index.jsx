@@ -58,7 +58,7 @@ function Details() {
                         <h1>Atores:</h1>
                     </TitleActors>
                     <Credits />
-                    <Footer />
+                    <Footer marginTop={"3rem"} />
                 </div>
             )}
         </>

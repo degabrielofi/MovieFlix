@@ -1,12 +1,12 @@
 import React from "react";
-import { Content } from "./style";
+import { FooterContainer } from "./style";
 import IconDEGabrielDEV from "assets/icons/DeGabrielDEV.png";
 
-const Footer = () => {
+const Footer = ({ marginTop }) => {
     let atualDate = new Date().getFullYear();
 
     return (
-        <Content>
+        <FooterContainer marginTop={marginTop}>
             <footer className="footer" id="footer">
                 <div className="container">
                     <div className="row">
@@ -116,7 +116,7 @@ const Footer = () => {
                     </section>
                 </div>
             </footer>
-        </Content>
+        </FooterContainer>
     );
 };
 

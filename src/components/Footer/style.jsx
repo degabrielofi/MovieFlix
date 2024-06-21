@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Content = styled.div`
+export const FooterContainer = styled.div`
+    margin-top: ${({ marginTop }) => marginTop || "0"};
+
     .container {
         max-width: 500%;
         margin: auto;
