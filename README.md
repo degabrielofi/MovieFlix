@@ -17,6 +17,12 @@ Abaixo podemos ver o resultado final do projeto. Espero que gostem!
 
 -   [MovieFlix](https://degabrielofimovieflix.netlify.app/)
 
+  # 🆕 Recursos Aprimorados (Features)
+
+- Icon do menu interativo.
+- Footer na página de detalhes.
+- A página salva sua página atual, para sempre voltar com ela já aberta.
+
 ## :computer: Tecnologias utilizadas
 
 Este projeto foi desenvolvido com as seguintes tecnologias:
