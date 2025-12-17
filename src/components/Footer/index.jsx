@@ -1,9 +1,9 @@
 import React from "react";
 import { FooterContainer } from "./style";
-import IconDEGabrielDEV from "assets/icons/DeGabrielDEV.png";
+import GueblyStudioIcon from "assets/icons/studio.png";
 
 const Footer = ({ marginTop }) => {
-    let atualDate = new Date().getFullYear();
+    const atualDate = new Date().getFullYear();
 
     return (
         <FooterContainer marginTop={marginTop}>
@@ -11,105 +11,91 @@ const Footer = ({ marginTop }) => {
                 <div className="container">
                     <div className="row">
                         <div className="footer-col">
-                            <h4>Navegue por aqui</h4>
+                            <h4>MovieFlix</h4>
                             <ul>
                                 <li>
-                                    <a href="/">Home</a>
+                                    <a href="/">Início</a>
                                 </li>
                                 <li>
                                     <a href="#pesquisar">Pesquisar</a>
                                 </li>
                                 <li>
-                                    <a href="#movies">Filmes</a>
-                                </li>
-                                <li>
-                                    <a href="/">Perguntas Frequentes</a>
+                                    <a href="#movies">Filmes Populares</a>
                                 </li>
                             </ul>
                         </div>
+
                         <div className="footer-col">
-                            <h4>Obter Ajuda</h4>
+                            <h4>Sobre o serviço</h4>
+                            <ul>
+                                <li className="about-text">
+                                    MovieFlix é um serviço onde você encontra os
+                                    filmes mais populares do momento e vê
+                                    detalhes como sinopse, duração, orçamento,
+                                    bilheteria e elenco — tudo em um só lugar.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="footer-col">
+                            <h4>Desenvolvido por</h4>
                             <ul>
                                 <li>
-                                    <a href="/">FAQ</a>
+                                    <span className="by">
+                                        Guebly Studio (by Guebly)
+                                    </span>
                                 </li>
                                 <li>
-                                    <a href="/">Telefone</a>
-                                </li>
-                                <li>
-                                    <a href="/">Chat</a>
-                                </li>
-                                <li>
-                                    <a href="mailto:contatodegabrielofi@gmail.com">
-                                        Suporte
+                                    <a
+                                        href="https://studio.guebly.com.br"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Acessar a Guebly Studio
                                     </a>
                                 </li>
                             </ul>
                         </div>
+
                         <div className="footer-col">
-                            <h4>Companhia</h4>
+                            <h4>Contato</h4>
                             <ul>
                                 <li>
-                                    <a href="/">Empresa</a>
+                                    <a href="mailto:contato@guebly.com.br">
+                                        Suporte
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="/">Quem Somos</a>
-                                </li>
-                                <li>
-                                    <a href="/">Noticias</a>
-                                </li>
-                                <li>
-                                    <a href="/">Serviços</a>
+                                    <a
+                                        href="https://studio.guebly.com.br"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Solicitar um projeto
+                                    </a>
                                 </li>
                             </ul>
-                        </div>
-                        <div className="footer-col">
-                            <h4>Redes Sociais:</h4>
-                            <div className="social-links">
-                                <a
-                                    target="__blank"
-                                    href="https://github.com/degabrielofi"
-                                    aria-label="GitHub"
-                                >
-                                    <i className="fab fa-github"></i>
-                                </a>
-                                <a
-                                    target="__blank"
-                                    href="https://discord.gg/TNMzEFyxA4"
-                                    aria-label="Discord"
-                                >
-                                    <i className="fab fa-discord"></i>
-                                </a>
-                                <a
-                                    target="__blank"
-                                    href="https://www.instagram.com/degabrielofi_/"
-                                    aria-label="Instagram"
-                                >
-                                    <i className="fab fa-instagram"></i>
-                                </a>
-                                <a
-                                    target="__blank"
-                                    href="https://www.linkedin.com/in/degabrielofi/"
-                                    aria-label="LinkedIn"
-                                >
-                                    <i className="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
                         </div>
                     </div>
 
                     <section className="degabrieldev">
                         <div className="copy">
-                            <h4>Copyright © {atualDate} - @degabrielofi_</h4>
+                            <h4>
+                                © {atualDate} MovieFlix · Desenvolvido por
+                                Guebly Studio
+                            </h4>
                         </div>
+
                         <div className="degabrieldevLink">
                             <a
-                                href="https://degabrielofi.vercel.app"
-                                target="--blank"
+                                href="https://studio.guebly.com.br"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Guebly Studio"
                             >
                                 <img
-                                    src={IconDEGabrielDEV}
-                                    alt="DEGabrielDEV"
+                                    src={GueblyStudioIcon}
+                                    alt="Guebly Studio"
                                 />
                             </a>
                         </div>

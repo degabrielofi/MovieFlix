@@ -4,7 +4,7 @@ export const FooterContainer = styled.div`
     margin-top: ${({ marginTop }) => marginTop || "0"};
 
     .container {
-        max-width: 500%;
+        max-width: 1200px;
         margin: auto;
         padding: 1rem 1.5rem;
     }
@@ -13,29 +13,33 @@ export const FooterContainer = styled.div`
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        gap: 24px;
     }
 
     ul {
         list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
     .footer {
-        background: rgba(000, 000, 000, 0.99);
+        background: rgba(0, 0, 0, 0.99);
         box-shadow: 0 15px 15px rgba(0, 0, 0, 0.9);
         padding: 5rem 0;
     }
 
     .footer-col {
-        width: 25%;
+        width: 23%;
         padding: 0 15px;
+        min-width: 220px;
     }
 
     .footer-col h4 {
         font-size: 18px;
         color: #fff;
         text-transform: capitalize;
-        margin-bottom: 35px;
-        font-weight: 500;
+        margin-bottom: 20px;
+        font-weight: 600;
         position: relative;
     }
 
@@ -44,7 +48,7 @@ export const FooterContainer = styled.div`
         position: absolute;
         left: 0;
         bottom: -10px;
-        background-color: #8e0e00;
+        background-color: #8e0e00; /* roxo Guebly */
         height: 2px;
         box-sizing: border-box;
         width: 50px;
@@ -56,8 +60,7 @@ export const FooterContainer = styled.div`
 
     .footer-col ul li a {
         font-size: 16px;
-        text-transform: capitalize;
-        color: #fff;
+        text-transform: none;
         text-decoration: none;
         font-weight: 300;
         color: #bbbbbb;
@@ -70,81 +73,86 @@ export const FooterContainer = styled.div`
         padding-left: 8px;
     }
 
-    .footer-col .social-links a {
-        display: inline-block;
-        height: 40px;
-        width: 40px;
-        background-color: rgba(255, 255, 255, 0.2);
-        margin: 0 10px 10px 0;
-        text-align: center;
-        line-height: 40px;
-        border-radius: 50%;
-        color: #fff;
-        transition: all 0.5s ease;
+    .about-text {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #bbbbbb;
     }
 
-    .footer-col .social-links a:hover {
-        color: #24262b;
-        background-color: #fff;
+    .by {
+        font-size: 14px;
+        color: #ffffff;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 6px;
     }
 
     .degabrieldev {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 5% 5%;
+        padding: 3rem 0 0;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        gap: 16px;
     }
 
     .copy h4 {
         color: #fff;
         font-weight: 500;
+        font-size: 14px;
     }
 
     .degabrieldevLink {
-        width: 20%;
+        width: 140px;
     }
 
     .degabrieldevLink img {
         width: 100%;
+        height: auto;
+        display: block;
     }
 
     @media (max-width: 992px) {
-        .copy h4 {
-            font-size: 50%;
+        .footer-col {
+            width: 45%;
         }
 
         .degabrieldevLink {
-            width: 40%;
+            width: 160px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .footer {
+            padding: 4rem 0;
+        }
+
+        .footer-col {
+            width: 100%;
+            text-align: center;
+        }
+
+        .footer-col h4::before {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+        }
+
+        .row {
+            justify-content: center;
+        }
+
+        .degabrieldev {
+            flex-direction: column;
+            text-align: center;
         }
     }
 
     @media (max-width: 250px) {
         .degabrieldev {
-            display: flex;
             flex-direction: column;
             justify-content: center;
-        }
-    }
-
-    @media (max-width: 767px) {
-        .footer-col h4::before {
-            margin: 2px 35%;
-            width: 30%;
-        }
-
-        text-align: center;
-
-        .footer-col {
-            width: 50%;
-            margin-bottom: 30px;
-        }
-    }
-
-    @media (max-width: 574px) {
-        text-align: center;
-
-        .footer-col {
-            width: 100%;
         }
     }
 `;
