@@ -1,57 +1,114 @@
+<h1 align="center">MovieFlix</h1>
+
 <p align="center">
-  <img alt="MyLinks" src="./src/assets/GitHub/Mockup.png " width="70%"> 
-  </p>
+  Descubra os filmes mais populares do momento com sinopse, elenco e detalhes completos
+</p>
 
-# :clipboard: Sobre o projeto
-
-Este é o MovieFlix, aonde você pode encontrar os filmes mais populares do momento, saber sobre o que se trata através de sua sinopse é saber os detalhes como: Duração, Orçamento, Bilheteria e quem são os personagens é por quem eles são interpretados. Tudo isso em um só lugar.
-
-Abaixo podemos ver o resultado final do projeto. Espero que gostem!
-
-<br>
 <p align="center">
-  <img alt="MyLinks" src="./src/assets/GitHub/MovieFlixGif.gif" width="70%"> 
-  </p>
+  <img alt="React" src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img alt="Styled Components" src="https://img.shields.io/badge/Styled--Components-6-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" />
+  <img alt="TMDB" src="https://img.shields.io/badge/TMDB-API-01B4E4?style=for-the-badge&logo=themoviedatabase&logoColor=white" />
+  <img alt="Netlify" src="https://img.shields.io/badge/Deploy-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />
+</p>
 
-# 🔗 Acesse o site com o link abaixo.
+<p align="center">
+  <a href="https://degabrielofimovieflix.netlify.app/" target="_blank">
+    <img alt="Demo ao vivo" src="https://img.shields.io/badge/Demo%20ao%20vivo-Acessar-00C7B7?style=for-the-badge&logo=netlify" />
+  </a>
+</p>
 
--   [MovieFlix](https://degabrielofimovieflix.netlify.app/)
+---
 
-  # 🆕 Recursos Aprimorados (Features)
+<p align="center">
+  <img alt="MovieFlix preview" src="./src/assets/GitHub/MovieFlixGif.gif" width="80%" />
+</p>
 
-- Icon do menu interativo.
-- Footer na página de detalhes.
-- A página salva sua página atual, para sempre voltar com ela já aberta.
+---
 
-## :computer: Tecnologias utilizadas
+## Descrição
 
-Este projeto foi desenvolvido com as seguintes tecnologias:
+O **MovieFlix** é uma aplicação web desenvolvida em React que consome a API do [TMDB (The Movie Database)](https://www.themoviedb.org/) para listar os filmes mais populares do momento. Para cada filme, o usuário pode visualizar sinopse, duração, orçamento, bilheteria e o elenco completo — tudo em uma interface limpa e responsiva.
 
--   [React.js](https://pt-br.reactjs.org/)
--   [Node.js](https://nodejs.org/en/)
--   [JavaScript](https://www.javascript.com/)
--   [Styled-Components](https://styled-components.com/)
--   [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
--   [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+---
 
-## 🌐 Para iniciarlizar o projeto utilize o comando abaixo:
+## Funcionalidades
+
+- Listagem paginada dos filmes mais populares
+- Página de detalhes com sinopse, duração, orçamento e bilheteria
+- Elenco completo com foto e nome do personagem
+- Ícone de menu interativo
+- Footer na página de detalhes
+- Paginação persistente: a página atual é salva e restaurada ao voltar
+
+---
+
+## Tecnologias
+
+| Tecnologia | Versão | Função |
+|---|---|---|
+| React | 18 | Framework de UI |
+| React Router DOM | 6 | Navegação entre páginas |
+| Styled Components | 6 | Estilização com CSS-in-JS |
+| use-local-storage | 3 | Persistência de estado no localStorage |
+| TMDB API | — | Fonte de dados dos filmes |
+| Netlify | — | Deploy e hospedagem |
+
+---
+
+## Pré-requisitos
+
+- Node.js 16+
+- npm ou yarn
+- Chave de API do [TMDB](https://www.themoviedb.org/settings/api)
+
+---
+
+## Instalação e execução
 
 ```bash
+# 1. Clone o repositório
+git clone https://github.com/degabrielofi/MovieFlix.git
+cd MovieFlix
 
-#Clonando o repositório do Github:
-$ git clone https://github.com/degabrielofi/MovieFlix
+# 2. Instale as dependências
+npm install
 
-#Instalar alguns packages:
-
-$ npm i react-router-dom styled-components
-
-#Inicializar pasta Web:
-$ npm run start
-
+# 3. Inicie o servidor de desenvolvimento
+npm start
 ```
 
-##
+A aplicação estará disponível em `http://localhost:3000`.
 
-<p align="center">
-  <img src="./src/assets/GitHub/logo.png" width="15%">
-  </p>
+### Build para produção
+
+```bash
+npm run build
+```
+
+---
+
+## Estrutura de pastas
+
+```
+MovieFlix/
+├── public/
+│   └── index.html
+├── src/
+│   ├── assets/
+│   │   └── GitHub/           # Imagens do README
+│   ├── components/           # Componentes reutilizáveis
+│   ├── pages/                # Páginas da aplicação
+│   ├── services/             # Integração com a API do TMDB
+│   ├── App.js
+│   └── index.js
+├── netlify.toml
+├── package.json
+└── README.md
+```
+
+---
+
+## Demo
+
+Acesse a versão em produção: **[degabrielofimovieflix.netlify.app](https://degabrielofimovieflix.netlify.app/)**
